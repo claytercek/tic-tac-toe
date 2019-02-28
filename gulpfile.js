@@ -11,7 +11,7 @@ const { series, parallel } = require('gulp');
 gulp.task('js', function(cb) {
   gulp.src('src/js/**/*.js')
 		.pipe(concat('script.js'))
-    // .pipe(uglify())
+    .pipe(uglify())
 		.pipe(gulp.dest('dist/js'))
 		.pipe(browserSync.reload({
       stream: true
