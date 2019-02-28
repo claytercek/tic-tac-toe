@@ -1,0 +1,19 @@
+{
+	"WWL": {
+		"dialogue" : "hello world",
+		"action" : {
+			"type": "popup",
+			"amount" : 5
+		}
+	},
+	"WLWL": {
+		"dialogue" : "lorem ipsum"
+	},
+	"WLWWL": {
+		"dialogue" : "hello world",
+		"action" : {
+			"type": "upgrade",
+			"state" : 2
+		}
+	}
+}
