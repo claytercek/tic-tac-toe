@@ -1,4 +1,5 @@
-/*
+
+ /*
  * ui object encloses all UI related methods and attributes
  */
 var ui = {};

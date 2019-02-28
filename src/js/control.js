@@ -1,3 +1,4 @@
+
 /*
  * object to contain all items accessable to all control functions
  */
@@ -15,8 +16,6 @@ $(".level").each(function() {
         $('.selected').toggleClass('selected');
         $this.toggleClass('not-selected');
         $this.toggleClass('selected');
-
-        ai.level = $this.attr("id");
     });
 });
 
