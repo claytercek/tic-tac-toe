@@ -179,7 +179,7 @@ var Game = function(autoPlayer) {
  * @return [Number]: the score calculated for the human player
  */
 Game.score = function(_state, playerToken) {
-	aiToken = playerToken === "X" ? "O" : "X";
+	let aiToken = playerToken === "X" ? "O" : "X";
 	if (_state.result === playerToken + "-won") {
 		// the x player won
 		return 10 - _state.oMovesCount;
