@@ -31,5 +31,10 @@ ui.insertAt = function(indx, symbol, playerToken) {
 ui.clear = function() {
     $('.cell').removeClass("occupied");
     $('.cell').html("");
-        console.log("REMOVING CLASSES");
 }
+
+
+$('.start').click(function(){
+    console.log("HELLO")
+    start("blind", "X")
+})

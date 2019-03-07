@@ -6,12 +6,18 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
+var gutil = require('gulp-util');
+let babel = require('gulp-babel');
 const { series, parallel } = require('gulp');
 
 gulp.task('js', function(cb) {
   gulp.src('src/js/**/*.js')
-		.pipe(concat('script.js'))
+    .pipe(babel({presets: ['@babel/preset-env']}))
+    .pipe(concat('script.js'))
     .pipe(uglify())
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red('[Error]'), err.toString()); 
+    })
 		.pipe(gulp.dest('dist/js'))
 		.pipe(browserSync.reload({
       stream: true
@@ -22,7 +28,7 @@ gulp.task('js', function(cb) {
 gulp.task('sass', function(cb) {
   gulp.src('src/scss/**/*.scss')
 		.pipe(sass())
-		// .pipe(concat('main.css'))
+		.pipe(concat('main.css'))
 		.pipe(gulp.dest('dist/css'))
 		.pipe(browserSync.reload({
       stream: true
