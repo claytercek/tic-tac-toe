@@ -38,7 +38,7 @@ gulp.task('sass', function(cb) {
 
 
 gulp.task('images', function(cb){
-  gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
+  gulp.src('src/images/**/*.+(png|jpg|jpeg|gif|svg)')
   .pipe(cache(imagemin()))
   .pipe(gulp.dest('dist/images'))
   cb();
