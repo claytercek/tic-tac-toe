@@ -65,7 +65,6 @@ var State = function(old) {
      * the state result is updated to reflect the result of the game
      * @returns [Boolean]: true if it's terminal, false otherwise
      */
-
     this.isTerminal = function() {
         var B = this.board;
 
@@ -112,6 +111,8 @@ var State = function(old) {
  */
 var Game = function(autoPlayer) {
 
+    this.playerToken = autoPlayer.playerToken;
+
     //public : initialize the ai player for this game
     this.ai = autoPlayer;
 
@@ -151,15 +152,15 @@ var Game = function(autoPlayer) {
         }
         else {
             //the game is still running
-
-            if(this.currentState.turn === "X") {
+            if(this.currentState.turn === this.playerToken) {
                 ui.switchViewTo("human");
             }
             else {
                 ui.switchViewTo("robot");
 
                 //notify the AI player its turn has come up
-                this.ai.notify("O");
+                var aiToken = this.playerToken === "X" ? "O" : "X";
+                this.ai.notify(aiToken);
             }
         }
     };
@@ -182,12 +183,13 @@ var Game = function(autoPlayer) {
  * @param _state [State]: the state in which the score is calculated
  * @return [Number]: the score calculated for the human player
  */
-Game.score = function(_state) {
-    if(_state.result === "X-won"){
+Game.score = function(_state, playerToken) {
+    aiToken = playerToken === "X" ? "O" : "X";
+    if(_state.result === playerToken + "-won"){
         // the x player won
         return 10 - _state.oMovesCount;
     }
-    else if(_state.result === "O-won") {
+    else if(_state.result === aiToken + "-won") {
         //the x player lost
         return - 10 + _state.oMovesCount;
     }

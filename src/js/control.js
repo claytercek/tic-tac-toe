@@ -27,7 +27,8 @@ $(".level").each(function() {
 $(".start").click(function() {
     var selectedDiffeculty = $('.selected').attr("id");
     if(typeof selectedDiffeculty !== "undefined") {
-        var aiPlayer = new AI(selectedDiffeculty);
+        ui.clear();
+        var aiPlayer = new AI(selectedDiffeculty, "O");
         globals.game = new Game(aiPlayer);
 
         aiPlayer.plays(globals.game);
@@ -45,13 +46,13 @@ $(".start").click(function() {
  $(".cell").each(function() {
      var $this = $(this);
      $this.click(function() {
-         if(globals.game.status === "running" && globals.game.currentState.turn === "X" && !$this.hasClass('occupied')) {
+         if(globals.game.status === "running" && globals.game.currentState.turn === globals.game.playerToken && !$this.hasClass('occupied')) {
              var indx = parseInt($this.data("indx"));
 
              var next = new State(globals.game.currentState);
-             next.board[indx] = "X";
+             next.board[indx] = globals.game.playerToken;
 
-             ui.insertAt(indx, "X");
+             ui.insertAt(indx, globals.game.playerToken, globals.game.playerToken);
 
              next.advanceTurn();
 
