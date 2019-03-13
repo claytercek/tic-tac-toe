@@ -1,0 +1,34 @@
+{
+	"WWL": {
+		"dialogue": "hello world",
+		"actions": [
+			{
+				"type": "popup",
+				"amount": 5
+			},
+			{
+				"type": "set difficulty",
+				"difficulty": "novice"
+			}
+		]
+	},
+	"WLWL": {
+		"dialogue": "lorem ipsum"
+	},
+	"WLWWL": {
+		"dialogue": "hello world",
+		"actions": [
+			{
+				"type": "upgrade",
+				"state": 2
+			}
+		]
+	},
+	"" : {
+		"actions": [
+			{
+				"type": "init"
+			}
+		]
+	}
+}

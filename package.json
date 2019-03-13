@@ -5,9 +5,12 @@
   "repository": "https://github.com/claytercek/tic-tac-toe.git",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-cache": "^1.1.1",
     "gulp-concat": "^2.6.1",
@@ -19,5 +22,8 @@
   "scripts": {
     "build": "gulp",
     "dev": "gulp watch"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.8"
   }
 }
