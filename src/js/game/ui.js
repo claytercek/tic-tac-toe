@@ -21,9 +21,19 @@ ui.insertAt = function(indx, symbol, playerToken) {
 
     if(!targetCell.hasClass('occupied')) {
         targetCell.html(symbol);
-        targetCell.css({
-            color : symbol == playerToken ? "green" : "red"
-        });
+        //Phase 1
+        /*targetCell.addClass(
+          
+            symbol == playerToken ? "green" : "red"
+        );*/
+      
+        //Phase 2 : Set color class and symbol class
+        targetCell.addClass( 
+          symbol + " " +
+          (symbol == playerToken ? "b-green" : "b-red")
+        );
+      
+      
         targetCell.addClass('occupied');
     }
 }
