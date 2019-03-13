@@ -40,6 +40,10 @@ ui.insertAt = function(indx, symbol, playerToken) {
 
 ui.clear = function() {
     $('.cell').removeClass("occupied");
+    $('.cell').removeClass("X");
+    $('.cell').removeClass("O");
+    $('.cell').removeClass("b-red");
+    $('.cell').removeClass("b-green");
     $('.cell').html("");
 }
 
