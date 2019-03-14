@@ -6,12 +6,10 @@
 
 %audiowide {
 	font-family: "Audiowide", "Helvetica", sans-serif !important;
-	src: url(https://fonts.googleapis.com/css?family=Audiowide);
 }
 
 %pressstart {
 	font-family: "Press Start 2P", "Helvetica";
-	src: url(https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2p);
 }
 
 body {
@@ -554,7 +552,8 @@ body {
 	mix-blend-mode: lighten;
 }
 
-.control {
+.control.b {
+	@extend %pressstart;
 	position: relative;
 	z-index: 100;
 }
@@ -892,14 +891,14 @@ body.b {
 	transition: all 0.32s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 	&:hover {
-		z-index: 2;
+		z-index: 5;
 		color: #fff;
 		text-shadow: none;
 		transform: rotateY(0deg) scale(1) translate(50px);
 	}
 
 	&:hover::before {
-		z-index: 2;
+		z-index: 5;
 		color: #fff;
 		text-shadow: none;
 		transform: rotateY(-2deg) scale(1) translate(-10px);
