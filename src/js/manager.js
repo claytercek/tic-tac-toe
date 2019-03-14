@@ -29,6 +29,15 @@ var tree = {
 			}
 		]
 	},
+	LL: {
+		dialogue: "Oh come on. Actually put some effort in.",
+		actions: [
+			{
+				type: "set history",
+				hist: ""
+			}
+		]
+	},
 	WW: {
 		dialogue: "I bet you googled how to win at tic tac toe every time. Let me try again please!",
 		actions: [
